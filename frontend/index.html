@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Graph Editor</title>
+    <style>
+        /* CSS styles for the page layout */
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="form">
+            <h2>Graph Editor</h2>
+            <label for="vertex-input">Vertex:</label>
+            <input type="text" id="vertex-input" />
+            <button onclick="addVertex()">Add Vertex</button>
+            <br />
+            <br />
+            <label for="graph-upload">Graph File:</label>
+            <input type="file" id="graph-upload" />
+            <button onclick="uploadGraph()">Upload Graph</button>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript code to handle vertex addition and graph upload
+        function addVertex() {
+            const vertexInput = document.getElementById("vertex-input");
+            const vertex = vertexInput.value;
+
+            // Perform any necessary validation on the vertex input
+
+            // Add the vertex to the graph or perform other desired actions
+
+            // Clear the input field
+            vertexInput.value = "";
+        }
+
+        function uploadGraph() {
+            const fileInput = document.getElementById("graph-upload");
+            const file = fileInput.files[0];
+
+            // Perform any necessary validation on the uploaded file
+
+            // Process the file and extract the graph data
+
+            // Perform actions with the graph data (e.g., display it, manipulate it, etc.)
+        }
+    </script>
+</body>
+
+</html>
