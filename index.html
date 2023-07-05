@@ -1,108 +1,269 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <title>Graph Editor</title>
-  <style>
-    /* CSS styles for the page layout */
-    body {
-      background-color: #f2f2f2;
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-
-    .container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-
-    .form {
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      padding: 20px;
-      text-align: center;
-      width: 300px;
-    }
-
-    .form h2 {
-      margin-top: 0;
-    }
-
-    .form label {
-      display: block;
-      margin-bottom: 8px;
-      text-align: left;
-      font-weight: bold;
-    }
-
-    .form input[type="text"],
-    .form input[type="file"] {
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      padding: 8px;
-      width: 100%;
-      margin-bottom: 10px;
-      box-sizing: border-box;
-    }
-
-    .form button {
-      background-color: #4caf50;
-      border: none;
-      color: white;
-      padding: 10px 16px;
-      font-size: 14px;
-      font-weight: bold;
-      cursor: pointer;
-      border-radius: 4px;
-    }
-
-    .form button:hover {
-      background-color: #45a049;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>graph</title>
+    <link rel="stylesheet" href="./frontend/index.css">
 </head>
+
 <body>
-  <div class="container">
-    <div class="form">
-      <h2>Graph Editor</h2>
-      <label for="vertex-input">Vertex:</label>
-      <input type="text" id="vertex-input" placeholder="Enter vertex" />
-      <button onclick="addVertex()">Add Vertex</button>
-      <br />
-      <br />
-      <label for="graph-upload">Graph File:</label>
-      <input type="file" id="graph-upload" />
-      <button onclick="uploadGraph()">Upload Graph</button>
+    <div class="main">
+        <nav>
+            <div class="div1">
+                <div class="div1a">
+                    <h1>graph</h1>
+                </div>
+                <div class="div1b">
+                    <div class="div1b-a">
+                        <h3>Home</h3>
+                    </div>
+                    <div class="div1b-b">
+                        <select name="cars" id="cars">
+                            <option value="volvo">Create Graph</option>
+                            <option value="saab">using adjacent matrix</option>
+                            <option value="mercedes">using incidence matrix</option>
+                            <option value="audi">edge list</option>
+                        </select>
+                    </div>
+                    <div class="div1b-c">
+                        <select name="cars" id="cars">
+                            <option value="volvo">Help</option>
+                            <option value="saab">Quick Start</option>
+                            <option value="mercedes">Open Source</option>
+                        </select>
+                    </div>
+                    <div class="div1b-d">
+                        <h3>News</h3>
+                    </div>
+                    <div class="div1b-e">
+                        <h3>Contact</h3>
+                    </div>
+                    <div class="div1b-f">
+                        <select class="form-select" id="languages" name="languages">
+                            <option>language</option>
+                            <option value="af">Afrikaans</option>
+                            <option value="sq">Albanian - shqip</option>
+                            <option value="am">Amharic - አማርኛ</option>
+                            <option value="ar">Arabic - العربية</option>
+                            <option value="an">Aragonese - aragonés</option>
+                            <option value="hy">Armenian - հայերեն</option>
+                            <option value="ast">Asturian - asturianu</option>
+                            <option value="az">Azerbaijani - azərbaycan dili</option>
+                            <option value="eu">Basque - euskara</option>
+                            <option value="be">Belarusian - беларуская</option>
+                            <option value="bn">Bengali - বাংলা</option>
+                            <option value="bs">Bosnian - bosanski</option>
+                            <option value="br">Breton - brezhoneg</option>
+                            <option value="bg">Bulgarian - български</option>
+                            <option value="ca">Catalan - català</option>
+                            <option value="ckb">Central Kurdish - کوردی (دەستنوسی عەرەبی)</option>
+                            <option value="zh">Chinese - 中文</option>
+                            <option value="zh-HK">Chinese (Hong Kong) - 中文（香港）</option>
+                            <option value="zh-CN">Chinese (Simplified) - 中文（简体）</option>
+                            <option value="zh-TW">Chinese (Traditional) - 中文（繁體）</option>
+                            <option value="co">Corsican</option>
+                            <option value="hr">Croatian - hrvatski</option>
+                            <option value="cs">Czech - čeština</option>
+                            <option value="da">Danish - dansk</option>
+                            <option value="nl">Dutch - Nederlands</option>
+                            <option value="en">English</option>
+                            <option value="en-AU">English (Australia)</option>
+                            <option value="en-CA">English (Canada)</option>
+                            <option value="en-IN">English (India)</option>
+                            <option value="en-NZ">English (New Zealand)</option>
+                            <option value="en-ZA">English (South Africa)</option>
+                            <option value="en-GB">English (United Kingdom)</option>
+                            <option value="en-US">English (United States)</option>
+                            <option value="eo">Esperanto - esperanto</option>
+                            <option value="et">Estonian - eesti</option>
+                            <option value="fo">Faroese - føroyskt</option>
+                            <option value="fil">Filipino</option>
+                            <option value="fi">Finnish - suomi</option>
+                            <option value="fr">French - français</option>
+                            <option value="fr-CA">French (Canada) - français (Canada)</option>
+                            <option value="fr-FR">French (France) - français (France)</option>
+                            <option value="fr-CH">French (Switzerland) - français (Suisse)</option>
+                            <option value="gl">Galician - galego</option>
+                            <option value="ka">Georgian - ქართული</option>
+                            <option value="de">German - Deutsch</option>
+                            <option value="de-AT">German (Austria) - Deutsch (Österreich)</option>
+                            <option value="de-DE">German (Germany) - Deutsch (Deutschland)</option>
+                            <option value="de-LI">German (Liechtenstein) - Deutsch (Liechtenstein)</option>
+                            <option value="de-CH">German (Switzerland) - Deutsch (Schweiz)</option>
+                            <option value="el">Greek - Ελληνικά</option>
+                            <option value="gn">Guarani</option>
+                            <option value="gu">Gujarati - ગુજરાતી</option>
+                            <option value="ha">Hausa</option>
+                            <option value="haw">Hawaiian - ʻŌlelo Hawaiʻi</option>
+                            <option value="he">Hebrew - עברית</option>
+                            <option value="hi">Hindi - हिन्दी</option>
+                            <option value="hu">Hungarian - magyar</option>
+                            <option value="is">Icelandic - íslenska</option>
+                            <option value="id">Indonesian - Indonesia</option>
+                            <option value="ia">Interlingua</option>
+                            <option value="ga">Irish - Gaeilge</option>
+                            <option value="it">Italian - italiano</option>
+                            <option value="it-IT">Italian (Italy) - italiano (Italia)</option>
+                            <option value="it-CH">Italian (Switzerland) - italiano (Svizzera)</option>
+                            <option value="ja">Japanese - 日本語</option>
+                            <option value="kn">Kannada - ಕನ್ನಡ</option>
+                            <option value="kk">Kazakh - қазақ тілі</option>
+                            <option value="km">Khmer - ខ្មែរ</option>
+                            <option value="ko">Korean - 한국어</option>
+                            <option value="ku">Kurdish - Kurdî</option>
+                            <option value="ky">Kyrgyz - кыргызча</option>
+                            <option value="lo">Lao - ລາວ</option>
+                            <option value="la">Latin</option>
+                            <option value="lv">Latvian - latviešu</option>
+                            <option value="ln">Lingala - lingála</option>
+                            <option value="lt">Lithuanian - lietuvių</option>
+                            <option value="mk">Macedonian - македонски</option>
+                            <option value="ms">Malay - Bahasa Melayu</option>
+                            <option value="ml">Malayalam - മലയാളം</option>
+                            <option value="mt">Maltese - Malti</option>
+                            <option value="mr">Marathi - मराठी</option>
+                            <option value="mn">Mongolian - монгол</option>
+                            <option value="ne">Nepali - नेपाली</option>
+                            <option value="no">Norwegian - norsk</option>
+                            <option value="nb">Norwegian Bokmål - norsk bokmål</option>
+                            <option value="nn">Norwegian Nynorsk - nynorsk</option>
+                            <option value="oc">Occitan</option>
+                            <option value="or">Oriya - ଓଡ଼ିଆ</option>
+                            <option value="om">Oromo - Oromoo</option>
+                            <option value="ps">Pashto - پښتو</option>
+                            <option value="fa">Persian - فارسی</option>
+                            <option value="pl">Polish - polski</option>
+                            <option value="pt">Portuguese - português</option>
+                            <option value="pt-BR">Portuguese (Brazil) - português (Brasil)</option>
+                            <option value="pt-PT">Portuguese (Portugal) - português (Portugal)</option>
+                            <option value="pa">Punjabi - ਪੰਜਾਬੀ</option>
+                            <option value="qu">Quechua</option>
+                            <option value="ro">Romanian - română</option>
+                            <option value="mo">Romanian (Moldova) - română (Moldova)</option>
+                            <option value="rm">Romansh - rumantsch</option>
+                            <option value="ru">Russian - русский</option>
+                            <option value="gd">Scottish Gaelic</option>
+                            <option value="sr">Serbian - српски</option>
+                            <option value="sh">Serbo-Croatian - Srpskohrvatski</option>
+                            <option value="sn">Shona - chiShona</option>
+                            <option value="sd">Sindhi</option>
+                            <option value="si">Sinhala - සිංහල</option>
+                            <option value="sk">Slovak - slovenčina</option>
+                            <option value="sl">Slovenian - slovenščina</option>
+                            <option value="so">Somali - Soomaali</option>
+                            <option value="st">Southern Sotho</option>
+                            <option value="es">Spanish - español</option>
+                            <option value="es-AR">Spanish (Argentina) - español (Argentina)</option>
+                            <option value="es-419">Spanish (Latin America) - español (Latinoamérica)</option>
+                            <option value="es-MX">Spanish (Mexico) - español (México)</option>
+                            <option value="es-ES">Spanish (Spain) - español (España)</option>
+                            <option value="es-US">Spanish (United States) - español (Estados Unidos)</option>
+                            <option value="su">Sundanese</option>
+                            <option value="sw">Swahili - Kiswahili</option>
+                            <option value="sv">Swedish - svenska</option>
+                            <option value="tg">Tajik - тоҷикӣ</option>
+                            <option value="ta">Tamil - தமிழ்</option>
+                            <option value="tt">Tatar</option>
+                            <option value="te">Telugu - తెలుగు</option>
+                            <option value="th">Thai - ไทย</option>
+                            <option value="ti">Tigrinya - ትግርኛ</option>
+                            <option value="to">Tongan - lea fakatonga</option>
+                            <option value="tr">Turkish - Türkçe</option>
+                            <option value="tk">Turkmen</option>
+                            <option value="tw">Twi</option>
+                            <option value="uk">Ukrainian - українська</option>
+                            <option value="ur">Urdu - اردو</option>
+                            <option value="ug">Uyghur</option>
+                            <option value="uz">Uzbek - o‘zbek</option>
+                            <option value="vi">Vietnamese - Tiếng Việt</option>
+                            <option value="wa">Walloon - wa</option>
+                            <option value="cy">Welsh - Cymraeg</option>
+                            <option value="fy">Western Frisian</option>
+                            <option value="xh">Xhosa</option>
+                            <option value="yi">Yiddish</option>
+                            <option value="yo">Yoruba - Èdè Yorùbá</option>
+                            <option value="zu">Zulu - isiZulu</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="div2">
+            <h1>Find shortest path</h1> <br>
+            <p>Create graph and find the shortest path. On the Help page you <a href="https://youtu.be/Sx4tOe3bWNg"
+                    target="_blank">will find tutorial video.</a> </p>
+        </div>
+        <div class="div3">
+            <div class="div3a" id="dropdown">
+                <button class="dropbtn">Graph</button>
+                <div class="dropdown-content">
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                </div>
+            </div>
+            <div class="div3b" id="dropdown">
+                <button class="dropbtn">View</button>
+                <div class="dropdown-content">
+                    <a href="#">25%</a>
+                    <a href="#">50%</a>
+                    <a href="#">75%</a>
+                    <a href="#">100%</a>
+                </div>
+            </div>
+            <div class="div3c">
+                <button>Default</button>
+            </div>
+            <div class="div3d">
+                <button>Add vertex</button>
+            </div>
+            <div class="div3e">
+                <button>Connect Vertex</button>
+            </div>
+            <div class="div3f" id="dropdown">
+                <button class="dropbtn">Algorithium</button>
+                <div class="dropdown-content">
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                </div>
+            </div>
+            <div class="div3g">
+                <button>Remove Object</button>
+            </div>
+            <div class="div3h" id="dropdown">
+                <button class="dropbtn">Settings</button>
+                <div class="dropdown-content">
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                </div>
+            </div>
+        </div>
+        <div class="div4">
+            <p>Select and move objects by mouse or move workspace. Use Ctrl to select several objects. Use context menu
+                for additional actions.</p>
+        </div>
+        <div class="div5">
+
+        </div>
+        <div class="div6">
+            <a href="https://graphonline.ru/en/opensource">
+                Our project is now open source. More details...</a>
+        </div>
+        <div class="div7">
+            <p>
+                <a href="https://graphonline.ru/en/">© Graph Online</a> is online project aimed at creation and easy
+                visualization of graph and <a href="https://graphonline.ru/en/">shortest path searching.</a> Also you
+                can create <a href="http://graphonline.ru/en/create_graph_by_matrix">graph from adjacency matrix.</a> <a
+                    href="https://graphonline.ru/en/about">About project</a> and <a
+                    href="http://graphonline.ru/en/help">look help page.</a> 2015 - 2023
+            </p>
+        </div>
     </div>
-  </div>
-
-  <script>
-    // JavaScript code to handle vertex addition and graph upload
-    function addVertex() {
-      const vertexInput = document.getElementById("vertex-input");
-      const vertex = vertexInput.value;
-      
-      // Perform any necessary validation on the vertex input
-      
-      // Add the vertex to the graph or perform other desired actions
-      
-      // Clear the input field
-      vertexInput.value = "";
-    }
-
-    function uploadGraph() {
-      const fileInput = document.getElementById("graph-upload");
-      const file = fileInput.files[0];
-
-      // Perform any necessary validation on the uploaded file
-      
-      // Process the file and extract the graph data
-      
-      // Perform actions with the graph data (e.g., display it, manipulate it, etc.)
-    }
-  </script>
 </body>
+
 </html>
+<script src="./scripts/index.js"></script>
