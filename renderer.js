@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Show the dialog for adding a vertex
     function showAddVertexDialog() {
-        console.log(:( you are a asshole)
+        console.log(":( you are a asshole")
         showDialog('addVertexDialog');
     }
 
